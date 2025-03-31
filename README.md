@@ -1,74 +1,104 @@
-# 🚀 DevOps Tools Installation & Setup  
+# 🚀 DevOps Tools Setup Scripts
 
-## 🔥 Automate the Installation of Essential DevOps Tools  
+## Overview
+This repository provides automated installation scripts for essential DevOps tools and services. Each script is designed to install and configure a specific tool efficiently on Ubuntu-based systems. Whether you're setting up Kubernetes, Jenkins, Terraform, MySQL, or other DevOps tools, this repository will help streamline your infrastructure setup.
 
-This repository provides scripts and configurations to quickly install and configure essential **DevOps tools** like **AWS CLI, Azure CLI, Docker, Kubernetes, Terraform, Jenkins, SonarQube, and more** on Linux, macOS, and Windows.  
+## 📌 Key Features
+- **Automated Installation**: Scripts handle dependencies and configurations.
+- **Error Handling**: Each script includes error-checking mechanisms.
+- **SEO-Optimized & Well-Documented**: Every script comes with detailed installation instructions.
+- **Easy-to-Use**: Just download, make executable, and run!
 
-## 📌 Supported DevOps Tools  
+## 📁 Repository Structure
+```
+├── eksctl/                 # Scripts for Amazon EKS cluster setup
+│   ├── create-eks-cluster.sh
+│   ├── delete-eks-cluster.sh
+│   ├── eksctl.sh
+├── docker/                 # Docker installation and setup
+│   ├── install-docker.sh
+│   ├── install-docker-compose.sh
+├── kubernetes/             # Kubernetes tools
+│   ├── install-kubectl.sh
+├── jenkins/                # Jenkins installation
+│   ├── install-jenkins.sh
+├── mysql/                  # MySQL database installation
+│   ├── install-mysql.sh
+├── terraform/              # Terraform installation
+│   ├── install-terraform.sh
+├── jfrog/                  # JFrog Artifactory installation
+│   ├── install-artifactory.sh
+├── trivy/                  # Trivy vulnerability scanner installation
+│   ├── install-trivy.sh
+├── sonarqube/              # SonarQube setup with Docker
+│   ├── install-sonarqube.sh
+├── README.md               # Documentation (this file)
+```
 
-This repository automates the installation of:  
+## 🛠 Installation & Usage
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/knightabir/awesome-devops-tools-setup.git
+   ```
+2. Navigate to the required tool folder:
+   ```bash
+   cd docker
+   ```
+3. Make the script executable:
+   ```bash
+   chmod +x install-docker.sh
+   ```
+4. Run the script:
+   ```bash
+   ./install-docker.sh
+   ```
 
-- **Cloud CLI Tools**  
-  - [AWS CLI](https://aws.amazon.com/cli/) – Install & configure AWS CLI for cloud automation  
-  - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) – Manage Microsoft Azure from the command line  
-  - [Boto3](https://boto3.amazonaws.com/) – AWS SDK for Python  
+## 📝 Available Scripts
 
-- **Containerization & Orchestration**  
-  - [Docker](https://www.docker.com/) – Install Docker for containerized applications  
-  - [Docker Compose](https://docs.docker.com/compose/) – Multi-container Docker applications  
-  - [Kubernetes](https://kubernetes.io/) – Manage Kubernetes clusters  
-  - [Kubectl](https://kubernetes.io/docs/reference/kubectl/) – Kubernetes CLI  
-  - [Helm](https://helm.sh/) – Kubernetes package manager  
-  - [EKSCTL](https://eksctl.io/) – Amazon EKS CLI  
+### 🚀 Kubernetes & Cloud Tools
+- **Amazon EKS**: Create and manage Kubernetes clusters on AWS.
+- **Kubectl**: CLI for Kubernetes cluster management.
 
-- **CI/CD & DevSecOps**  
-  - [Jenkins](https://www.jenkins.io/) – Automate software delivery  
-  - [SonarQube](https://www.sonarqube.org/) – Code quality and security  
-  - [JFrog CLI](https://jfrog.com/) – Manage Artifactory and Xray  
-  - [Trivy](https://aquasecurity.github.io/trivy/) – Security scanner for containers  
+### 🛠 CI/CD & DevOps Tools
+- **Jenkins**: Automate software development with CI/CD.
+- **Terraform**: Infrastructure as Code (IaC) for cloud provisioning.
+- **JFrog Artifactory**: Manage and distribute software artifacts.
 
-- **Infrastructure as Code (IaC) & Databases**  
-  - [Terraform](https://www.terraform.io/) – Automate cloud infrastructure  
-  - [Ansible](https://www.ansible.com/) – Configuration management  
-  - [Maven](https://maven.apache.org/) – Build automation tool  
-  - [MySQL](https://www.mysql.com/) – Relational database  
+### 🐳 Containerization
+- **Docker**: Install and configure Docker.
+- **Docker Compose**: Manage multi-container applications.
+- **Trivy**: Vulnerability scanner for containers.
+- **SonarQube**: Static code analysis for security and quality.
 
-## ⚡ Quick Start  
+### 💾 Databases
+- **MySQL**: Install and configure MySQL database server.
 
-### 🖥️ Prerequisites  
-Ensure you have:  
-- **Linux/macOS/Windows**  
-- **Admin or sudo access**  
-- **Git installed**  
-
-### 🔧 Installation  
-
-Clone this repository and run the install script:  
-
+## ✅ Verification
+After installation, verify the tools:
 ```bash
-git clone https://github.com/yourusername/devops-tools-installer.git  
-cd devops-tools-installer  
-chmod +x install.sh  
-./install.sh  
+kubectl version --client
+terraform --version
+docker --version
+mysql --version
 ```
 
-For Windows, run:  
+## 🔄 Uninstallation
+To remove a tool, use package managers like `apt-get remove`, or delete Docker containers as needed.
 
-```powershell
-.\install.ps1
-```
+## 📖 Resources
+- [AWS EKS Documentation](https://docs.aws.amazon.com/eks/)
+- [Jenkins Docs](https://www.jenkins.io/doc/)
+- [Terraform Docs](https://developer.hashicorp.com/terraform/docs)
+- [SonarQube Docs](https://docs.sonarqube.org/)
 
-## 🚀 Features  
-✅ **Automated installation** of multiple DevOps tools  
-✅ **Cross-platform support** (Linux, macOS, Windows)  
-✅ **Modular & customizable** installation scripts  
-✅ **Secure & regularly updated** scripts  
+## 👤 Author
+Developed by **Abir Sarkar**  
+📌 GitHub: [@knightabir](https://github.com/knightabir)
 
-## 📖 Documentation  
-Check the [Wiki](https://github.com/yourusername/devops-tools-installer/wiki) for detailed setup guides, configurations, and troubleshooting tips.  
+## 📜 License
+This repository is open-source under the [MIT License](LICENSE). Feel free to contribute and improve the scripts!
 
-## 🤝 Contributing  
-Contributions are welcome! Open a pull request or create an issue for feature requests.  
+---
 
-## 📜 License  
-This project is licensed under the [MIT License](LICENSE).  
+🔥 **Optimized for SEO**: DevOps automation scripts, Kubernetes, Docker, Jenkins, Terraform, AWS EKS, CI/CD pipelines, Infrastructure as Code (IaC).
+
