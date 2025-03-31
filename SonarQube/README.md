@@ -1,67 +1,72 @@
-# MySQL Server Installer for Ubuntu
+# SonarQube Container Setup
 
-This script automates the installation of MySQL Server on Ubuntu systems.
+This script automates the setup of a [SonarQube](https://www.sonarqube.org/) container using Docker.
 
 ## Overview
 
-The installer script performs the following tasks:
-- Updates the package list
-- Installs MySQL Server
-- Starts the MySQL service
+The script performs the following tasks:
+- Pulls and runs the SonarQube LTS Community Edition container
+- Maps port `9000` for web access
+- Runs the container in detached mode
 
 ## Prerequisites
 
-Before running this script, ensure your system has:
+Before running this script, ensure you have:
 - `sudo` privileges
-- Internet connectivity
-- `apt` package manager (for Ubuntu-based systems)
-- Minimum 500MB of free disk space
+- [Docker installed](https://docs.docker.com/get-docker/)
+- Internet connectivity to pull the container image
 
 ## Installation Steps
 
-1. Download the installer script:
+1. Download the setup script:
    ```bash
-   curl -O https://raw.githubusercontent.com/your-repo/scripts/main/install-mysql.sh
+   curl -O https://raw.githubusercontent.com/your-repo/scripts/main/install-sonarqube.sh
    ```
 
 2. Make the script executable:
    ```bash
-   chmod +x install-mysql.sh
+   chmod +x install-sonarqube.sh
    ```
 
 3. Run the installer:
    ```bash
-   ./install-mysql.sh
+   ./install-sonarqube.sh
    ```
 
-## What Gets Installed
+## Accessing SonarQube
 
-- MySQL Server in `/usr/bin/mysql`
-- MySQL service managed by `systemctl`
+Once the container is running, access the SonarQube UI at:
+```
+http://localhost:9000
+```
+The default login credentials are:
+- **Username:** admin
+- **Password:** admin
 
 ## Verification
 
-After installation, verify MySQL is running:
+Check if the container is running:
 ```bash
-sudo systemctl status mysql.service
+docker ps | grep sonarqube
 ```
 
 ## Troubleshooting
 
-If the installation fails:
-- Ensure you have a stable internet connection
-- Verify you have sufficient disk space
-- Check that you have the necessary permissions
-- Run `sudo systemctl status mysql.service` to check for errors
+If SonarQube does not start:
+- Ensure Docker is running
+- Verify that port `9000` is not in use
+- Check the container logs:
+  ```bash
+  docker logs sonarqube
+  ```
 
 ## Uninstallation
 
-To remove MySQL Server from your system, run:
+To stop and remove the SonarQube container, run:
 ```bash
-sudo apt remove --purge mysql-server -y
+docker stop sonarqube && docker rm sonarqube
 ```
 
 ## Additional Resources
 
-- [MySQL Documentation](https://dev.mysql.com/doc/)
-
+- [SonarQube Documentation](https://docs.sonarqube.org/)
