@@ -21,7 +21,7 @@ Before running this script, ensure your system has:
 
 1. Download the installer script:
    ```bash
-   curl -O https://raw.githubusercontent.com/your-repo/scripts/main/install-maven.sh
+   curl -O https://raw.githubusercontent.com/knightabir/awesome-devops-tools-setup/refs/heads/main/Maven/maven.sh
    ```
 
 2. Make the script executable:
