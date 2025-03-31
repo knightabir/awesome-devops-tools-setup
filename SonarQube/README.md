@@ -20,7 +20,7 @@ Before running this script, ensure you have:
 
 1. Download the setup script:
    ```bash
-   curl -O https://raw.githubusercontent.com/your-repo/scripts/main/install-sonarqube.sh
+   curl -O https://raw.githubusercontent.com/knightabir/awesome-devops-tools-setup/refs/heads/main/SonarQube/sonarqube.sh
    ```
 
 2. Make the script executable:
